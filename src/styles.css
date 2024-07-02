@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Grundschrift';
+    src: url('assets/grundschrift-beta.ttf');
+}
+
+.logo {
+  height: 2.5em;
+  padding: 0.25em;
+  will-change: filter;
+  transition: 0.75s;
+  filter: drop-shadow(0 0 0.2em #24c8db);
+}
+
+.info {
+    margin-top: 3px;
+}
+
+#score, #highscore {
+    font-weight: bold;
+    font-family: monospace;
+}
+
+#status {
+    display: block;
+    margin: 3px auto;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+#question {
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px 1px 10px;
+    font-size: 2.5em;;
+    font-weight: bold;
+    font-family: Grundschrift;
+}
+
+/* Grundlinie */
+#question::after {
+    position: absolute;
+    content: '';
+    z-index: -1; /* make sure it's behind the text */
+    left: 0;
+    bottom: 0.5em;  /* adjust position */
+    width: 100%;
+    height: 2px;
+    background-color: #cacaca;
+}
+
+#answers {
+    padding: 20px;
+}
+
+#answers .answer {
+    display: inline-block;
+    margin: 15px;
+    border: solid 1px #2f2f2f;
+    border-radius: 8px;
+    min-width: 60px;
+    min-height: 60px;
+    cursor: pointer;
+}
+
+#answers .answer {
+    outline-offset: 2px;
+    outline-width: 5px;
+}
+
+#answers .answer.correct {
+    outline-style: solid;
+    outline-color: green;
+}
+
+#answers .answer.wrong {
+    outline-style: solid;
+    outline-color: red;
+}
+
+.disable-clicks {
+    pointer-events: none;
+    cursor: default;
+}
+

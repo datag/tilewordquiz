@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TileWordQuiz</title>
+    <script type="module" src="/jquery.min.js" defer></script>
+    <script type="module" src="/bootstrap.bundle.min.js" defer></script>
+    <script src="/questions.js" defer></script>
+    <script type="module" src="/main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            
+            <h1><img class="logo" src="/assets/logo.svg" alt="Logo"> TileWordQuiz</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <button id="new-game">✨ Neues Spiel</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center info">
+            Punkte: <span id="score"></span> | Highscore: <span id="highscore"></span>
+            <br>
+            <span id="status"></span>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <div id="question">Hallo</div>
+        </div>
+      </div>
+      <div class="row justify-content-center" id="answers">
+        <div class="col-3 text-center"><button class="answer" data-index="0"></button></div>
+        <div class="col-3 text-center"><button class="answer" data-index="1"></button></div>
+        <div class="col-3 text-center"><button class="answer" data-index="2"></button></div>
+        <div class="col-3 text-center"><button class="answer" data-index="3"></button></div>
+      </div>
+    </div>
+  </body>
+</html>
