@@ -6,6 +6,7 @@ TileWordQuiz is a simple kids quiz for finding the matching tile for a (German) 
 
 ```shell
 cargo tauri android init
+cargo tauri icon src/assets/logo.svg
 cargo tauri dev
 cargo tauri android dev
 cargo tauri android build --target=aarch64
