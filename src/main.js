@@ -21,7 +21,12 @@ $(function() {
 
     $("#new-game").click((e) => newGame());
 
-    $answers.click((e) => checkAnswer($(e.target).data("index")));
+    const isTouchDevice = "ontouchstart" in document.documentElement;
+    $answers.on(isTouchDevice ? "touchstart" : "mousedown", (e) => {
+        e.preventDefault();
+
+        checkAnswer($(e.target).data("index"));
+    });
 
     newGame();
 });
