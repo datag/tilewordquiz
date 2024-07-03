@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Grundschrift';
-    src: url('assets/grundschrift-beta.ttf');
+    src: url('./assets/grundschrift-beta.ttf');
 }
 
 .logo {
@@ -38,11 +38,11 @@
     font-family: Grundschrift;
 }
 
-/* Grundlinie */
+/* render Grundlinie */
 #question::after {
     position: absolute;
     content: '';
-    z-index: -1; /* make sure it's behind the text */
+    z-index: -1;  /* make sure it's behind the text */
     left: 0;
     bottom: 0.5em;  /* adjust position */
     width: 100%;
@@ -51,22 +51,18 @@
 }
 
 #answers {
-    padding: 20px;
+    margin: 30px 0;
 }
 
 #answers .answer {
     display: inline-block;
-    margin: 15px;
     border: solid 1px #2f2f2f;
     border-radius: 8px;
-    min-width: 60px;
-    min-height: 60px;
-    cursor: pointer;
-}
-
-#answers .answer {
     outline-offset: 2px;
     outline-width: 5px;
+    width: 66px;
+    height: 60px;
+    cursor: pointer;
 }
 
 #answers .answer.correct {
@@ -83,4 +79,3 @@
     pointer-events: none;
     cursor: default;
 }
-

@@ -1,4 +1,4 @@
-const questions = [
+export const questions = [
     {
         type: "color",
         options: [

@@ -1,43 +1,32 @@
+import { questions } from "./questions.js";
 
-let game = {
-    state: "menu",
+const game = {
     score: 0,
     highscore: 0,
     questionIndex: null,
     optionIndex: null,
 };
 
-let $score, $highscore;
-let $status;
 let $answers;
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-let audio = {
+const audio = {
     correct: null,
     wrong: null,
 };
-loadAudio("correct");
-loadAudio("wrong");
+["correct", "wrong"].forEach(sample => loadAudio(sample));
 
 $(function() {
-    $score = $("#score");
-    $highscore = $("#highscore");
-    $status = $("#status");
     $answers = $("#answers .answer");
 
-    $("#new-game").click((e) => {
-        newGame();
-    });
+    $("#new-game").click((e) => newGame());
 
-    $answers.click(function (e) {
-        checkAnswer($(this).data("index"));
-    });
+    $answers.click((e) => checkAnswer($(e.target).data("index")));
 
     newGame();
 });
 
 function newGame() {
-    game.state = "question";
     game.score = 0;
     game.highscore = 0;
 
@@ -47,18 +36,17 @@ function newGame() {
 }
 
 function renderStatus() {
-    $score.text(game.score);
-    $highscore.text(game.highscore);
-    $status.text("");
+    $("#score").text(game.score);
+    $("#highscore").text(game.highscore);
 }
 
 function nextQuestion() {
-    let lastQuestionIndex = game.questionIndex;
+    const lastQuestionIndex = game.questionIndex;
     while (lastQuestionIndex == game.questionIndex) {
         game.questionIndex = Math.floor(Math.random() * questions.length);
     }
 
-    let question = questions[game.questionIndex];
+    const question = questions[game.questionIndex];
     shuffle(question.options);
     game.optionIndex = Math.floor(Math.random() * question.options.length);
 
@@ -66,7 +54,7 @@ function nextQuestion() {
 }
 
 function checkAnswer(index) {
-    let correct = index == game.optionIndex;
+    const correct = index == game.optionIndex;
 
     $answers.eq(game.optionIndex).addClass("correct");
 
@@ -80,34 +68,38 @@ function checkAnswer(index) {
         playAudio(audio.correct);
     }
 
+    const $status = $("#status");
     $status.text(correct ? "😄" : "😔");
 
     $answers.addClass("disable-clicks");
 
     window.setTimeout(() => {
+        $status.text("");
         $answers.removeClass("disable-clicks correct wrong");
         
         nextQuestion();
         renderStatus();
-    }, correct ? 1250 : 3000);
+    }, correct ? 1000 : 3000);
 }
 
 function renderQuestion(question) {
-    let correctOption = question.options[game.optionIndex];
+    const correctOption = question.options[game.optionIndex];
     
     $("#question").text(correctOption.value);
 
     $answers.each((i, e) => {
+        // reset element
         $(e)
             .text("")
             .css({
                 backgroundColor: "inherit",
                 fontSize: "inherit",
                 fontFamily: "inherit",
+                padding: "inherit",
             })
         ;
 
-        let option = question.options[i];
+        const option = question.options[i];
         switch (question.type) {
             case "color":            
                 $(e).css({
@@ -125,13 +117,14 @@ function renderQuestion(question) {
                 $(e)
                     .text(option.option)
                     .css({
-                        fontSize: "2em",
+                        fontSize: "2.2em",
                         fontFamily: "Grundschrift",
+                        padding: "8px 0 0px 0",     // offset for Grundschrift
                     })
                 ;
                 break;
             default:
-                alert("Unknown question type: " + option.type);
+                console.error("Unknown question type", option.type);
                 break;
         }
     });
@@ -141,16 +134,15 @@ function shuffle(array) {
     let currentIndex = array.length;
 
     while (currentIndex != 0) {
-        let randomIndex = Math.floor(Math.random() * currentIndex);
+        const randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
-        [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
 }
 
 function loadAudio(sample) {
-    let file = `/assets/${sample}.ogg`;
+    const file = `./assets/${sample}.ogg`;
     fetch(file)
         .then(response => response.arrayBuffer())
         .then(data => audioContext.decodeAudioData(data))
