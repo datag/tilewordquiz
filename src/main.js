@@ -11,6 +11,14 @@ let $score, $highscore;
 let $status;
 let $answers;
 
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let audio = {
+    correct: null,
+    wrong: null,
+};
+loadAudio("correct");
+loadAudio("wrong");
+
 $(function() {
     $score = $("#score");
     $highscore = $("#highscore");
@@ -65,9 +73,11 @@ function checkAnswer(index) {
     if (!correct) {
         game.score = 0;
         $answers.eq(index).addClass("wrong");
+        playAudio(audio.wrong);
     } else {
         game.score++;
         game.highscore = Math.max(game.score, game.highscore);
+        playAudio(audio.correct);
     }
 
     $status.text(correct ? "😄" : "😔");
@@ -137,4 +147,22 @@ function shuffle(array) {
         [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
+}
+
+function loadAudio(sample) {
+    let file = `/assets/${sample}.ogg`;
+    fetch(file)
+        .then(response => response.arrayBuffer())
+        .then(data => audioContext.decodeAudioData(data))
+        .then(decodedData => {
+            audio[sample] = decodedData;
+        })
+        .catch(error => console.error("Error loading audio file:", file, error));
+}
+
+function playAudio(buffer) {
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioContext.destination);
+    source.start(0);
 }
