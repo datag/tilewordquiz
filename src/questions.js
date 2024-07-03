@@ -59,7 +59,7 @@ export const questions = [
             { value: "Violett", option: "#8a2be2" },
             { value: "Silber", option: "#c0c0c0" },
             { value: "Olivgrün", option: "#808000" },
-            { value: "Hellblau", option: "#add8e6" },
+            { value: "Hellblau", option: "#0096ff" },
         ],
     },
     {
@@ -222,6 +222,42 @@ export const questions = [
             { value: "Meer", option: "🌊" },
             { value: "Insel", option: "🏝️" },
             { value: "Wüste", option: "🏜️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Radfahren", option: "🚴" },
+            { value: "Skifahren", option: "⛷️" },
+            { value: "Laufen", option: "🏃" },
+            { value: "Schwimmen", option: "🏊" },
+        ],
+    },
+    {
+        type: "symbol",
+        options: [
+            { value: "Euro", option: "€" },
+            { value: "Dollar", option: "$" },
+            { value: "Cent", option: "¢" },
+            { value: "Pfund", option: "£" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Auto", option: "🚗" },
+            { value: "Fahrrad", option: "🚲" },
+            { value: "Flugzeug", option: "✈️" },
+            { value: "Schiff", option: "🚢" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Kreis", option: "●" },
+            { value: "Quadrat", option: "■" },
+            { value: "Dreieck", option: "▴" },
+            { value: "Raute", option: "⬧" },
         ],
     },
 ];
