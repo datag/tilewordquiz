@@ -33,7 +33,7 @@
     display: inline-block;
     margin-top: 5px;
     padding: 5px 10px 1px 10px;
-    font-size: 2.5em;;
+    font-size: 2.5em;
     font-weight: bold;
     font-family: Grundschrift;
 }
@@ -63,6 +63,20 @@
     width: 66px;
     height: 60px;
     cursor: pointer;
+}
+
+#answers .answer.type-color {
+    background-color: inherit;
+}
+
+#answers .answer.type-emoji, #answers .answer.type-symbol {
+    font-size: 2em;
+}
+
+#answers .answer.type-number {
+    font-size: 2.2em;
+    font-family: Grundschrift;
+    padding: 8px 0 0px 0;  /* offset for Grundschrift */
 }
 
 #answers .answer.correct {

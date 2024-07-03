@@ -14,7 +14,7 @@ const audio = {
     correct: null,
     wrong: null,
 };
-["correct", "wrong"].forEach(sample => loadAudio(sample));
+Object.keys(audio).forEach(sample => loadAudio(sample));
 
 $(function() {
     $answers = $("#answers .answer");
@@ -60,6 +60,7 @@ function nextQuestion() {
 
 function checkAnswer(index) {
     const correct = index == game.optionIndex;
+    const timeout = correct ? 750 : 3000;
 
     $answers.eq(game.optionIndex).addClass("correct");
 
@@ -84,7 +85,7 @@ function checkAnswer(index) {
         
         nextQuestion();
         renderStatus();
-    }, correct ? 1000 : 3000);
+    }, timeout);
 }
 
 function renderQuestion(question) {
@@ -93,45 +94,32 @@ function renderQuestion(question) {
     $("#question").text(correctOption.value);
 
     $answers.each((i, e) => {
-        // reset element
-        $(e)
-            .text("")
-            .css({
-                backgroundColor: "inherit",
-                fontSize: "inherit",
-                fontFamily: "inherit",
-                padding: "inherit",
-            })
-        ;
-
         const option = question.options[i];
+        const css = {
+            backgroundColor: "inherit",
+        };
+        let text = "";
+
         switch (question.type) {
-            case "color":            
-                $(e).css({
-                    backgroundColor: option.option,
-                });
+            case "color":
+                css.backgroundColor = option.option;
                 break;
             case "emoji":
             case "symbol":
-                $(e)
-                    .text(option.option)
-                    .css({fontSize: "2em"})
-                ;
-                break;
-            case "number":            
-                $(e)
-                    .text(option.option)
-                    .css({
-                        fontSize: "2.2em",
-                        fontFamily: "Grundschrift",
-                        padding: "8px 0 0px 0",     // offset for Grundschrift
-                    })
-                ;
+            case "number":
+                text = option.option;
                 break;
             default:
                 console.error("Unknown question type", option.type);
-                break;
+                return;
         }
+
+        $(e)
+            .text(text)
+            .removeClass((index, className) => (className.match(/\btype-\S+/g) || []).join(' '))
+            .addClass(`type-${question.type}`)
+            .css(css)
+        ;
     });
 }
 
