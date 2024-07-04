@@ -56,10 +56,10 @@ export const questions = [
     {
         type: "color",
         options: [
-            { value: "Violett", option: "#8a2be2" },
+            { value: "Violett", option: "#8800ff" },
             { value: "Silber", option: "#c0c0c0" },
             { value: "Olivgrün", option: "#808000" },
-            { value: "Hellblau", option: "#0096ff" },
+            { value: "Hellblau", option: "#7ec0ee" },
         ],
     },
     {
@@ -238,8 +238,8 @@ export const questions = [
         options: [
             { value: "Euro", option: "€" },
             { value: "Dollar", option: "$" },
-            { value: "Cent", option: "¢" },
-            { value: "Pfund", option: "£" },
+            { value: "Unendlich", option: "∞" },
+            { value: "Prozent", option: "%" },
         ],
     },
     {
@@ -258,6 +258,303 @@ export const questions = [
             { value: "Quadrat", option: "■" },
             { value: "Dreieck", option: "▴" },
             { value: "Raute", option: "⬧" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Ärztin", option: "👩‍⚕️" },
+            { value: "Wissenschaftlerin", option: "👩‍🔬" },
+            { value: "Lehrerin", option: "👩‍🏫" },
+            { value: "Polizistin", option: "👮‍♀️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Arzt", option: "👨‍⚕️" },
+            { value: "Wissenschaftler", option: "👨‍🔬" },
+            { value: "Lehrer", option: "👨‍🏫" },
+            { value: "Polizist", option: "👮‍♂️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Künstlerin", option: "👩‍🎨" },
+            { value: "Feuerwehrfrau", option: "👩‍🚒" },
+            { value: "Astronautin", option: "👩‍🚀" },
+            { value: "Mechanikerin", option: "👩‍🔧" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Künstler", option: "👨‍🎨" },
+            { value: "Feuerwehrmann", option: "👨‍🚒" },
+            { value: "Astronaut", option: "👨‍🚀" },
+            { value: "Mechaniker", option: "👨‍🔧" },
+        ],
+    },
+    {
+        type: "symbol",
+        options: [
+            { value: "Herz", option: "❤" },
+            { value: "Stern", option: "★" },
+            { value: "Pfeil", option: "→" },
+            { value: "Kugel", option: "•" },
+        ],
+    },
+    {
+        type: "number",
+        options: [
+            { value: "Komma", option: "," },
+            { value: "Punkt", option: "." },
+            { value: "Fragezeichen", option: "?" },
+            { value: "Ausrufezeichen", option: "!" },
+        ],
+    },
+    {
+        type: "color",
+        options: [
+            { value: "Hellblau", option: "#add8e6" },
+            { value: "Dunkelblau", option: "#00008b" },
+            { value: "Hellgrün", option: "#90ee90" },
+            { value: "Dunkelgrün", option: "#006400" },
+        ],
+    },
+    {
+        type: "number",
+        options: [
+            { value: "P", option: "p" },
+            { value: "Q", option: "q" },
+            { value: "B", option: "b" },
+            { value: "G", option: "g" },
+        ],
+    },
+    {
+        type: "number",
+        options: [
+            { value: "p", option: "P" },
+            { value: "q", option: "Q" },
+            { value: "b", option: "B" },
+            { value: "g", option: "G" },
+        ],
+    },
+    {
+        type: "number",
+        options: [
+            { value: "L", option: "l" },
+            { value: "I", option: "i" },
+            { value: "J", option: "j" },
+            { value: "T", option: "t" },
+        ],
+    },
+    {
+        type: "number",
+        options: [
+            { value: "l", option: "L" },
+            { value: "i", option: "I" },
+            { value: "j", option: "J" },
+            { value: "t", option: "T" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Elefant", option: "🐘" },
+            { value: "Giraffe", option: "🦒" },
+            { value: "Zebra", option: "🦓" },
+            { value: "Löwe", option: "🦁" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Känguru", option: "🦘" },
+            { value: "Panda", option: "🐼" },
+            { value: "Tiger", option: "🐯" },
+            { value: "Nilpferd", option: "🦛" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Gitarre", option: "🎸" },
+            { value: "Klavier", option: "🎹" },
+            { value: "Trommel", option: "🥁" },
+            { value: "Saxophon", option: "🎷" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Mikrofon", option: "🎤" },
+            { value: "Note", option: "🎵" },
+            { value: "Geige", option: "🎻" },
+            { value: "Trompete", option: "🎺" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Hut", option: "🎩" },
+            { value: "Schuh", option: "👞" },
+            { value: "Kleid", option: "👗" },
+            { value: "Handtasche", option: "👜" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Brille", option: "👓" },
+            { value: "Krawatte", option: "👔" },
+            { value: "Armbanduhr", option: "⌚" },
+            { value: "Halskette", option: "📿" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Hammer", option: "🔨" },
+            { value: "Schraubenschlüssel", option: "🔧" },
+            { value: "Schraubendreher", option: "🪛" },
+            { value: "Schraubklemme", option: "🗜️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Säge", option: "🪚" },
+            { value: "Werkzeugkasten", option: "🧰" },
+            { value: "Axt", option: "🪓" },
+            { value: "Spitzhacke", option: "⛏️" },
+        ],
+    },
+    {
+        type: "symbol",
+        options: [
+            { value: "Links", option: "←" },
+            { value: "Rechts", option: "→" },
+            { value: "Oben", option: "↑" },
+            { value: "Unten", option: "↓" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Rose", option: "🌹" },
+            { value: "Reis", option: "🍚" },
+            { value: "Roboter", option: "🤖" },
+            { value: "Rennwagen", option: "🏎️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Sonne", option: "☀️" },
+            { value: "Sonnebrille", option: "😎" },
+            { value: "Sonneblume", option: "🌻" },
+            { value: "Sonneaufgang", option: "🌅" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Hund", option: "🐶" },
+            { value: "Hut", option: "🎩" },
+            { value: "Hand", option: "✋" },
+            { value: "Hafen", option: "⚓" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Kamel", option: "🐫" },
+            { value: "Kamera", option: "📷" },
+            { value: "Kamille", option: "🌼" },
+            { value: "Katze", option: "🐈‍⬛" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Auto", option: "🚗" },
+            { value: "Apfel", option: "🍎" },
+            { value: "Anker", option: "⚓" },
+            { value: "Alien", option: "👽" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Ballett", option: "🩰" },
+            { value: "Banane", option: "🍌" },
+            { value: "Baby", option: "👶" },
+            { value: "Ball", option: "⚽" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Eule", option: "🦉" },
+            { value: "Eis", option: "🍦" },
+            { value: "Ente", option: "🦆" },
+            { value: "Elch", option: "🦌" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Schaf", option: "🐑" },
+            { value: "Schere", option: "✂️" },
+            { value: "Schokolade", option: "🍫" },
+            { value: "Schneemann", option: "⛄" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Blume", option: "🌸" },
+            { value: "Blitz", option: "⚡" },
+            { value: "Blatt", option: "🍃" },
+            { value: "Blauwal", option: "🐋" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Kanne", option: "🫖" },
+            { value: "Tanne", option: "🎄" },
+            { value: "Fahne", option: "🚩" },
+            { value: "Pfanne", option: "🍳" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Tastatur", option: "⌨️" },
+            { value: "Computermaus", option: "🖱️" },
+            { value: "Joystick", option: "🕹️" },
+            { value: "Gamepad", option: "🎮" },
+        ],
+    },
+    {
+        type: "symbol",
+        options: [
+            { value: "1", option: "Ⅰ" },
+            { value: "2", option: "Ⅱ" },
+            { value: "3", option: "Ⅲ" },
+            { value: "4", option: "Ⅳ" },
+        ],
+    },
+    {
+        type: "symbol",
+        options: [
+            { value: "Pik", option: "♠" },
+            { value: "Herz", option: "♥" },
+            { value: "Kreuz", option: "♣" },
+            { value: "Karo", option: "♦" },
         ],
     },
 ];
