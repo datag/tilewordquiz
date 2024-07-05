@@ -118,7 +118,7 @@ function renderQuestion(question) {
                 break;
             case "emoji":
             case "symbol":
-            case "number":
+            case "alphanumeric":
                 text = option.option;
                 break;
             default:
@@ -147,7 +147,7 @@ function shuffle(array) {
 }
 
 function loadAudio(sample) {
-    const file = `./assets/${sample}.ogg`;
+    const file = `/assets/audio/${sample}.ogg`;
     fetch(file)
         .then(response => response.arrayBuffer())
         .then(data => audioContext.decodeAudioData(data))

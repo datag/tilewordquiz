@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Grundschrift';
-    src: url('./assets/grundschrift-beta.ttf');
+    src: url('/assets/fonts/grundschrift-beta.ttf');
 }
 
 .logo {
@@ -79,11 +79,12 @@
     background-color: inherit;
 }
 
-#answers .answer.type-emoji, #answers .answer.type-symbol {
+#answers .answer.type-emoji,
+#answers .answer.type-symbol {
     font-size: 2em;
 }
 
-#answers .answer.type-number {
+#answers .answer.type-alphanumeric {
     font-size: 2.2em;
     font-family: Grundschrift;
     padding: 8px 0 0px 0;  /* offset for Grundschrift */

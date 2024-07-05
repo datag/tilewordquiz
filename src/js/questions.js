@@ -90,7 +90,7 @@ export const questions = [
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
             { value: "Eins", option: "1" },
             { value: "Zwei", option: "2" },
@@ -99,7 +99,7 @@ export const questions = [
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
             { value: "Fünf", option: "5" },
             { value: "Sechs", option: "6" },
@@ -108,7 +108,7 @@ export const questions = [
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
             { value: "Neun", option: "9" },
             { value: "Zehn", option: "10 "},
@@ -306,7 +306,7 @@ export const questions = [
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
             { value: "Komma", option: "," },
             { value: "Punkt", option: "." },
@@ -324,39 +324,39 @@ export const questions = [
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
-            { value: "P", option: "p" },
-            { value: "Q", option: "q" },
-            { value: "B", option: "b" },
-            { value: "G", option: "g" },
+            { value: "Kleines „P“", option: "p" },
+            { value: "Kleines „Q“", option: "q" },
+            { value: "Kleines „B“", option: "b" },
+            { value: "Kleines „G“", option: "g" },
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
-            { value: "p", option: "P" },
-            { value: "q", option: "Q" },
-            { value: "b", option: "B" },
-            { value: "g", option: "G" },
+            { value: "Großes „p“", option: "P" },
+            { value: "Großes „q“", option: "Q" },
+            { value: "Großes „b“", option: "B" },
+            { value: "Großes „g“", option: "G" },
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
-            { value: "L", option: "l" },
-            { value: "I", option: "i" },
-            { value: "J", option: "j" },
-            { value: "T", option: "t" },
+            { value: "Kleines „L“", option: "l" },
+            { value: "Kleines „I“", option: "i" },
+            { value: "Kleines „J“", option: "j" },
+            { value: "Kleines „T“", option: "t" },
         ],
     },
     {
-        type: "number",
+        type: "alphanumeric",
         options: [
-            { value: "l", option: "L" },
-            { value: "i", option: "I" },
-            { value: "j", option: "J" },
-            { value: "t", option: "T" },
+            { value: "Großes „l“", option: "L" },
+            { value: "Großes „i“", option: "I" },
+            { value: "Großes „j“", option: "J" },
+            { value: "Großes „t“", option: "T" },
         ],
     },
     {
