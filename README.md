@@ -27,6 +27,6 @@ See https://grundschulverband.de/die-grundschrift-fuer-den-computer/
 
 ### Used sounds
 
-* https://freesound.org/people/NenadSimic/sounds/171697/
-* https://freesound.org/people/BMacZero/sounds/96124/
-
+* Answer correct: https://freesound.org/people/NenadSimic/sounds/171697/
+* Answer wrong: https://freesound.org/people/BMacZero/sounds/96124/
+* Highscore: https://freesound.org/people/Davidsraba/sounds/347174/

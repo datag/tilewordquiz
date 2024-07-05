@@ -15,9 +15,19 @@
     margin-top: 3px;
 }
 
-#score, #highscore {
+.score {
     font-weight: bold;
     font-family: monospace;
+}
+
+#highscore-info {
+    display: inline-block;;
+    color: gray;
+}
+
+#score.is-highscore::after {
+    content: '🏆';
+    padding-left: 5px;
 }
 
 #status {

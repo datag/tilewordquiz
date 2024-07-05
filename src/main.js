@@ -13,6 +13,7 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const audio = {
     correct: null,
     wrong: null,
+    highscore: null,
 };
 Object.keys(audio).forEach(sample => loadAudio(sample));
 
@@ -41,8 +42,14 @@ function newGame() {
 }
 
 function renderStatus() {
-    $("#score").text(game.score);
-    $("#highscore").text(game.highscore);
+    $("#score")
+        .text(game.score)
+        .toggleClass("is-highscore", game.highscore > 0  && game.score > game.highscore);
+
+    const highscore = Math.max(game.score, game.highscore);
+    $("#highscore-info")
+        .html(`(Highscore: <span class="score">${highscore}</span>)`)
+        .toggle(game.highscore > 0 && game.highscore >= game.score);
 }
 
 function nextQuestion() {
@@ -65,13 +72,17 @@ function checkAnswer(index) {
     $answers.eq(game.optionIndex).addClass("correct");
 
     if (!correct) {
+        game.highscore = game.score;
         game.score = 0;
         $answers.eq(index).addClass("wrong");
         playAudio(audio.wrong);
     } else {
         game.score++;
-        game.highscore = Math.max(game.score, game.highscore);
-        playAudio(audio.correct);
+        if (game.highscore > 0 && game.score == game.highscore + 1) {
+            playAudio(audio.highscore);
+        } else {
+            playAudio(audio.correct);
+        }
     }
 
     const $status = $("#status");
@@ -79,12 +90,13 @@ function checkAnswer(index) {
 
     $answers.addClass("disable-clicks");
 
+    renderStatus();
+
     window.setTimeout(() => {
         $status.text("");
         $answers.removeClass("disable-clicks correct wrong");
         
         nextQuestion();
-        renderStatus();
     }, timeout);
 }
 
