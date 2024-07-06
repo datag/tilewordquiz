@@ -2,6 +2,15 @@
 
 TileWordQuiz is a simple kids quiz for finding the matching tile for a (German) word.
 
+The word is displayed with a "Grundschrift" font that is easy to read for learners.
+
+There are currently 3 question types:
+
+1) Emoji/Symbol: Tiles with symbols/pictograms/smileys
+2) Alphanumeric: Tiles with digits, letters or characters to be display in the Grundschrift font
+3) Color: Tiles with a color as the background
+
+
 ## Building
 
 * https://v2.tauri.app/start/prerequisites/#rust

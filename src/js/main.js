@@ -67,7 +67,7 @@ function nextQuestion() {
 
 function checkAnswer(index) {
     const correct = index == game.optionIndex;
-    const timeout = correct ? 750 : 3000;
+    const timeout = correct ? 750 : 3500;
 
     $answers.eq(game.optionIndex).addClass("correct");
 
@@ -78,6 +78,9 @@ function checkAnswer(index) {
         playAudio(audio.wrong);
     } else {
         game.score++;
+        $("#score")
+            .animate({ opacity: .25 }, 75)
+            .animate({ opacity: 1 }, 175);
         if (game.highscore > 0 && game.score == game.highscore + 1) {
             playAudio(audio.highscore);
         } else {
