@@ -256,7 +256,7 @@ export const questions = [
         options: [
             { value: "Kreis", option: "●" },
             { value: "Quadrat", option: "■" },
-            { value: "Dreieck", option: "▴" },
+            { value: "Dreieck", option: "◣" },
             { value: "Raute", option: "⬧" },
         ],
     },
@@ -326,37 +326,28 @@ export const questions = [
     {
         type: "alphanumeric",
         options: [
-            { value: "Kleines „P“", option: "p" },
-            { value: "Kleines „Q“", option: "q" },
-            { value: "Kleines „B“", option: "b" },
-            { value: "Kleines „G“", option: "g" },
+            { value: "kleines „P“", option: "p" },
+            { value: "kleines „Q“", option: "q" },
+            { value: "kleines „B“", option: "b" },
+            { value: "kleines „G“", option: "g" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
-            { value: "Großes „p“", option: "P" },
-            { value: "Großes „q“", option: "Q" },
-            { value: "Großes „b“", option: "B" },
-            { value: "Großes „g“", option: "G" },
+            { value: "kleines „L“", option: "l" },
+            { value: "kleines „I“", option: "i" },
+            { value: "kleines „J“", option: "j" },
+            { value: "kleines „T“", option: "t" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
-            { value: "Kleines „L“", option: "l" },
-            { value: "Kleines „I“", option: "i" },
-            { value: "Kleines „J“", option: "j" },
-            { value: "Kleines „T“", option: "t" },
-        ],
-    },
-    {
-        type: "alphanumeric",
-        options: [
-            { value: "Großes „l“", option: "L" },
-            { value: "Großes „i“", option: "I" },
-            { value: "Großes „j“", option: "J" },
-            { value: "Großes „t“", option: "T" },
+            { value: "großes „l“", option: "L" },
+            { value: "großes „i“", option: "I" },
+            { value: "großes „j“", option: "J" },
+            { value: "großes „t“", option: "T" },
         ],
     },
     {
@@ -498,7 +489,7 @@ export const questions = [
         type: "emoji",
         options: [
             { value: "Eule", option: "🦉" },
-            { value: "Eis", option: "🍦" },
+            { value: "Eidechse", option: "🦎" },
             { value: "Ente", option: "🦆" },
             { value: "Elch", option: "🦌" },
         ],
@@ -555,6 +546,78 @@ export const questions = [
             { value: "Herz", option: "♥" },
             { value: "Kreuz", option: "♣" },
             { value: "Karo", option: "♦" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Deutschland", option: "🇩🇪" },
+            { value: "Österreich", option: "🇦🇹" },
+            { value: "Schweiz", option: "🇨🇭" },
+            { value: "Frankreich", option: "🇫🇷" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "zwölf Uhr", option: "🕛" },
+            { value: "drei Uhr", option: "🕒" },
+            { value: "sechs Uhr", option: "🕕" },
+            { value: "neun Uhr", option: "🕘" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Zielflagge", option: "🏁" },
+            { value: "Piratenflagge", option: "🏴‍☠️" },
+            { value: "schwarze Flagge", option: "🏴" },
+            { value: "weiße Flagge", option: "🏳️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Erde", option: "🌍" },
+            { value: "Mond", option: "🌕" },
+            { value: "Sonne", option: "☀️" },
+            { value: "Milchstraße", option: "🌌" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Neumond", option: "🌑" },
+            { value: "Mondsichel", option: "🌒" },
+            { value: "Halbmond", option: "🌓" },
+            { value: "Vollmond", option: "🌕" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Augen zuhalten", option: "🙈" },
+            { value: "Mund zuhalten", option: "🙊" },
+            { value: "Ohren zuhalten", option: "🙉" },
+            { value: "Normales Affengesicht", option: "🐵" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Fußball", option: "⚽" },
+            { value: "Basketball", option: "🏀" },
+            { value: "Volleyball", option: "🏐" },
+            { value: "Tennisball", option: "🎾" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Blumenstrauß", option: "💐" },
+            { value: "Geschenk", option: "🎁" },
+            { value: "Ballon", option: "🎈" },
+            { value: "Konfetti", option: "🎉" },
         ],
     },
 ];
