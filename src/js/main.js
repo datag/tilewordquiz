@@ -140,6 +140,9 @@ function renderQuestion(question) {
             .css(css)
         ;
     });
+
+    $("#note").toggle(!!question.note);
+    $("#note .note-text").text(question.note ? question.note : "");
 }
 
 function shuffle(array) {

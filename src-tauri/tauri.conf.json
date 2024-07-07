@@ -1,6 +1,6 @@
 {
   "productName": "TileWordQuiz",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "identifier": "dev.datag.tilewordquiz",
   "build": {
     "frontendDist": "../src"
@@ -11,7 +11,7 @@
       {
         "title": "TileWordQuiz",
         "width": 490,
-        "height": 400
+        "height": 410
       }
     ],
     "security": {

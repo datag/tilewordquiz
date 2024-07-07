@@ -97,6 +97,7 @@ export const questions = [
             { value: "Drei", option: "3" },
             { value: "Vier", option: "4" },
         ],
+        note: "Zahlen in Worten",
     },
     {
         type: "alphanumeric",
@@ -106,6 +107,7 @@ export const questions = [
             { value: "Sieben", option: "7" },
             { value: "Acht", option: "8" },
         ],
+        note: "Zahlen in Worten",
     },
     {
         type: "alphanumeric",
@@ -115,6 +117,7 @@ export const questions = [
             { value: "Elf", option: "11" },
             { value: "Zwölf", option: "12" },
         ],
+        note: "Zahlen in Worten",
     },
     {
         type: "symbol",
@@ -124,6 +127,7 @@ export const questions = [
             { value: "Mal", option: "⋅" },
             { value: "Geteilt", option: ":" },
         ],
+        note: "Symbole der vier Grundrechenarten",
     },
     {
         type: "symbol",
@@ -133,13 +137,14 @@ export const questions = [
             { value: "Größer-als", option: ">" },
             { value: "Ungleich", option: "≠" },
         ],
+        note: "Gängige Vergleichszeichen",
     },
     {
         type: "emoji",
         options: [
             { value: "Lampe", option: "💡" },
             { value: "Besen", option: "🧹" },
-            { value: "Sofa", option: "🛋️" },
+            { value: "Stuhl", option: "🪑" },
             { value: "Bett", option: "🛏️" },
         ],
     },
@@ -313,6 +318,7 @@ export const questions = [
             { value: "Fragezeichen", option: "?" },
             { value: "Ausrufezeichen", option: "!" },
         ],
+        note: "Gängige Interpunktionszeichen",
     },
     {
         type: "color",
@@ -331,6 +337,7 @@ export const questions = [
             { value: "kleines „B“", option: "b" },
             { value: "kleines „G“", option: "g" },
         ],
+        note: "Unterscheidung ähnlich aussehender Kleinbuchstaben",
     },
     // {
     //     type: "alphanumeric",
@@ -349,6 +356,7 @@ export const questions = [
             { value: "großes „j“", option: "J" },
             { value: "großes „t“", option: "T" },
         ],
+        note: "Unterscheidung ähnlich aussehender Großbuchstaben",
     },
     {
         type: "emoji",
@@ -448,6 +456,7 @@ export const questions = [
             { value: "Sonnenblume", option: "🌻" },
             { value: "Sonnenaufgang", option: "🌅" },
         ],
+        note: "Gleiches Stammwort; Lese-Disziplin",
     },
     {
         type: "emoji",
@@ -455,7 +464,7 @@ export const questions = [
             { value: "Hund", option: "🐶" },
             { value: "Hut", option: "🎩" },
             { value: "Hand", option: "✋" },
-            { value: "Hafen", option: "⚓" },
+            { value: "Orang-Utan", option: "🦧" },
         ],
     },
     {
@@ -538,6 +547,7 @@ export const questions = [
             { value: "3", option: "Ⅲ" },
             { value: "4", option: "Ⅳ" },
         ],
+        note: "Römische Zahlen (1 bis 4)",
     },
     // {
     //     type: "symbol",
@@ -570,7 +580,7 @@ export const questions = [
         type: "emoji",
         options: [
             { value: "Zielflagge", option: "🏁" },
-            { value: "Piratenflagge", option: "🏴‍☠️" },
+            { value: "Regenbogenflagge", option: "🏳️‍🌈" },
             { value: "schwarze Flagge", option: "🏴" },
             { value: "weiße Flagge", option: "🏳️" },
         ],
@@ -592,6 +602,7 @@ export const questions = [
             { value: "Halbmond", option: "🌓" },
             { value: "Vollmond", option: "🌕" },
         ],
+        note: "(Vereinfachte) Beleuchtungsphasen des Mondes",
     },
     {
         type: "emoji",
@@ -599,7 +610,7 @@ export const questions = [
             { value: "Augen zuhalten", option: "🙈" },
             { value: "Mund zuhalten", option: "🙊" },
             { value: "Ohren zuhalten", option: "🙉" },
-            { value: "Orang-Utan", option: "🦧" },
+            { value: "Affengesicht", option: "🐵" },
         ],
     },
     {
@@ -623,20 +634,22 @@ export const questions = [
     {
         type: "color",
         options: [
-            { value: "[🌈] 🟥 + 🟩", option: "#ffff00" },
-            { value: "[🌈] 🟥 + 🟦", option: "#ff00ff" },
-            { value: "[🌈] 🟩 + 🟦", option: "#00ffff" },
-            { value: "[🌈] 🟥 + 🟩 + 🟦", option: "#ffffff" },
+            { value: "🔦: 🟥 + 🟩", option: "#ffff00" },
+            { value: "🔦: 🟥 + 🟦", option: "#ff00ff" },
+            { value: "🔦: 🟩 + 🟦", option: "#00ffff" },
+            { value: "🔦: 🟥 + 🟩 + 🟦", option: "#ffffff" },
         ],
+        note: "Additive Farbmischung (Lichtfarben)",
     },
     {
         type: "color",
         options: [
-            { value: "[🎨] 💛 + 💜", option: "#fc0011" },      // yellow (#feff00) + magenta (#e9008a) = red
-            { value: "[🎨] 💛 + 🩵", option: "#008436" },      // yellow (#feff00) + cyan (#009ec7) = green
-            { value: "[🎨] 🩵 + 💜", option: "#00007c" },      // cyan (#009ec7) + magenta (#e9008a) = blue
-            { value: "[🎨] 🩵 + 💜 + 💛", option: "#0a0001" }, // cyan (#009ec7) + magenta (#e9008a) + yellow (#feff00) = theoretical black
+            { value: "🎨: 💛 + 💜", option: "#fc0011" },      // yellow (#feff00) + magenta (#e9008a) = red
+            { value: "🎨: 💛 + 🩵", option: "#008436" },      // yellow (#feff00) + cyan (#009ec7) = green
+            { value: "🎨: 🩵 + 💜", option: "#00007c" },      // cyan (#009ec7) + magenta (#e9008a) = blue
+            { value: "🎨: 🩵 + 💜 + 💛", option: "#0a0001" }, // cyan (#009ec7) + magenta (#e9008a) + yellow (#feff00) = theoretical black
         ],
+        note: "Substraktive Farbmischung (Körperfarben)",
     },
     {
         type: "alphanumeric",
