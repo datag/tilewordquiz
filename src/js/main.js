@@ -110,7 +110,10 @@ function checkAnswer(index) {
 function renderQuestion(question) {
     const correctOption = question.options[game.optionIndex];
     
-    $("#question").text(correctOption.value);
+    $("#question")
+        .text(correctOption.value)
+        .toggleClass("grundschrift", !(question.flags?.includes("no-grundschrift") ?? false))
+    ;
 
     $answers.each((i, e) => {
         const option = question.options[i];

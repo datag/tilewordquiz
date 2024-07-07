@@ -45,11 +45,14 @@
     padding: 5px 10px 1px 10px;
     font-size: 2.5em;
     font-weight: bold;
+}
+
+#question.grundschrift {
     font-family: Grundschrift;
 }
 
 /* render Grundlinie */
-#question::after {
+#question.grundschrift::after {
     position: absolute;
     content: '';
     z-index: -1;  /* make sure it's behind the text */

@@ -633,6 +633,7 @@ export const questions = [
     },
     {
         type: "color",
+        flags: ["no-grundschrift"],
         options: [
             { value: "🔦: 🟥 + 🟩", option: "#ffff00" },
             { value: "🔦: 🟥 + 🟦", option: "#ff00ff" },
@@ -643,6 +644,7 @@ export const questions = [
     },
     {
         type: "color",
+        flags: ["no-grundschrift"],
         options: [
             { value: "🎨: 💛 + 💜", option: "#fc0011" },      // yellow (#feff00) + magenta (#e9008a) = red
             { value: "🎨: 💛 + 🩵", option: "#008436" },      // yellow (#feff00) + cyan (#009ec7) = green
