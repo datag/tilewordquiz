@@ -332,15 +332,15 @@ export const questions = [
             { value: "kleines „G“", option: "g" },
         ],
     },
-    {
-        type: "alphanumeric",
-        options: [
-            { value: "kleines „L“", option: "l" },
-            { value: "kleines „I“", option: "i" },
-            { value: "kleines „J“", option: "j" },
-            { value: "kleines „T“", option: "t" },
-        ],
-    },
+    // {
+    //     type: "alphanumeric",
+    //     options: [
+    //         { value: "kleines „L“", option: "l" },
+    //         { value: "kleines „I“", option: "i" },
+    //         { value: "kleines „J“", option: "j" },
+    //         { value: "kleines „T“", option: "t" },
+    //     ],
+    // },
     {
         type: "alphanumeric",
         options: [
@@ -444,9 +444,9 @@ export const questions = [
         type: "emoji",
         options: [
             { value: "Sonne", option: "☀️" },
-            { value: "Sonnebrille", option: "😎" },
-            { value: "Sonneblume", option: "🌻" },
-            { value: "Sonneaufgang", option: "🌅" },
+            { value: "Sonnenbrille", option: "😎" },
+            { value: "Sonnenblume", option: "🌻" },
+            { value: "Sonnenaufgang", option: "🌅" },
         ],
     },
     {
@@ -539,15 +539,15 @@ export const questions = [
             { value: "4", option: "Ⅳ" },
         ],
     },
-    {
-        type: "symbol",
-        options: [
-            { value: "Pik", option: "♠" },
-            { value: "Herz", option: "♥" },
-            { value: "Kreuz", option: "♣" },
-            { value: "Karo", option: "♦" },
-        ],
-    },
+    // {
+    //     type: "symbol",
+    //     options: [
+    //         { value: "Pik", option: "♠" },
+    //         { value: "Herz", option: "♥" },
+    //         { value: "Kreuz", option: "♣" },
+    //         { value: "Karo", option: "♦" },
+    //     ],
+    // },
     {
         type: "emoji",
         options: [
@@ -599,7 +599,7 @@ export const questions = [
             { value: "Augen zuhalten", option: "🙈" },
             { value: "Mund zuhalten", option: "🙊" },
             { value: "Ohren zuhalten", option: "🙉" },
-            { value: "Normales Affengesicht", option: "🐵" },
+            { value: "Orang-Utan", option: "🦧" },
         ],
     },
     {
@@ -618,6 +618,78 @@ export const questions = [
             { value: "Geschenk", option: "🎁" },
             { value: "Ballon", option: "🎈" },
             { value: "Konfetti", option: "🎉" },
+        ],
+    },
+    {
+        type: "color",
+        options: [
+            { value: "[🌈] 🟥 + 🟩", option: "#ffff00" },
+            { value: "[🌈] 🟥 + 🟦", option: "#ff00ff" },
+            { value: "[🌈] 🟩 + 🟦", option: "#00ffff" },
+            { value: "[🌈] 🟥 + 🟩 + 🟦", option: "#ffffff" },
+        ],
+    },
+    {
+        type: "color",
+        options: [
+            { value: "[🎨] 💛 + 💜", option: "#fc0011" },      // yellow (#feff00) + magenta (#e9008a) = red
+            { value: "[🎨] 💛 + 🩵", option: "#008436" },      // yellow (#feff00) + cyan (#009ec7) = green
+            { value: "[🎨] 🩵 + 💜", option: "#00007c" },      // cyan (#009ec7) + magenta (#e9008a) = blue
+            { value: "[🎨] 🩵 + 💜 + 💛", option: "#0a0001" }, // cyan (#009ec7) + magenta (#e9008a) + yellow (#feff00) = theoretical black
+        ],
+    },
+    {
+        type: "alphanumeric",
+        options: [
+            { value: "3 + 6 = ?", option: "9" },
+            { value: "5 + 3 = ?", option: "8" },
+            { value: "4 + 3 = ?", option: "7" },
+            { value: "2 + 3 = ?", option: "5" },
+        ],
+    },
+    {
+        type: "alphanumeric",
+        options: [
+            { value: "7 - 2 = ?", option: "5" },
+            { value: "5 - 3 = ?", option: "2" },
+            { value: "2 - 1 = ?", option: "1" },
+            { value: "6 - 3 = ?", option: "3" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Spritze", option: "💉" },
+            { value: "Pille", option: "💊" },
+            { value: "Pflaster", option: "🩹" },
+            { value: "Stethoskop", option: "🩺" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Schlange", option: "🐍" },
+            { value: "Skorpion", option: "🦂" },
+            { value: "Spinne", option: "🕷️" },
+            { value: "Frosch", option: "🐸" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Weihnachtsbaum", option: "🎄" },
+            { value: "Geschenk", option: "🎁" },
+            { value: "Nikolaus", option: "🎅" },
+            { value: "Schneemann", option: "⛄" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Osterei", option: "🥚" },
+            { value: "Hase", option: "🐰" },
+            { value: "Küken", option: "🐥" },
+            { value: "Korb", option: "🧺" },
         ],
     },
 ];
