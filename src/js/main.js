@@ -68,10 +68,13 @@ function nextQuestion() {
 function checkAnswer(index) {
     const correct = index == game.optionIndex;
     const timeout = correct ? 750 : 3500;
+    const $status = $("#status");
+    let emoji;
 
     $answers.eq(game.optionIndex).addClass("correct");
 
     if (!correct) {
+        emoji = "😔";
         game.highscore = game.score;
         game.score = 0;
         $answers.eq(index).addClass("wrong");
@@ -82,14 +85,15 @@ function checkAnswer(index) {
             .animate({ opacity: .25 }, 75)
             .animate({ opacity: 1 }, 175);
         if (game.highscore > 0 && game.score == game.highscore + 1) {
+            emoji = "😸";
             playAudio(audio.highscore);
         } else {
+            emoji = "😄";
             playAudio(audio.correct);
         }
     }
 
-    const $status = $("#status");
-    $status.text(correct ? "😄" : "😔");
+    $status.text(emoji);
 
     $answers.addClass("disable-clicks");
 
