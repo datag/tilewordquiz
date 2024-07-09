@@ -55,8 +55,12 @@ function renderStatus() {
 
 function nextQuestion() {
     const lastQuestionIndex = game.questionIndex;
-    while (lastQuestionIndex == game.questionIndex) {
-        game.questionIndex = Math.floor(Math.random() * questions.length);
+    if (questions.length > 1) {
+        while (lastQuestionIndex == game.questionIndex) {
+            game.questionIndex = Math.floor(Math.random() * questions.length);
+        }
+    } else {
+        game.questionIndex = 0;
     }
 
     const question = questions[game.questionIndex];
