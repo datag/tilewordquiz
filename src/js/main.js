@@ -5,6 +5,7 @@ const game = {
     highscore: 0,
     questionIndex: null,
     optionIndex: null,
+    variantIndex: null,
 };
 
 let $answers;
@@ -62,6 +63,9 @@ function nextQuestion() {
     shuffle(question.options);
     game.optionIndex = Math.floor(Math.random() * question.options.length);
 
+    const option = question.options[game.optionIndex];
+    game.variantIndex = Array.isArray(option.value) ? Math.floor(Math.random() * option.value.length) : null;
+
     renderQuestion(question);
 }
 
@@ -111,12 +115,14 @@ function renderQuestion(question) {
     const correctOption = question.options[game.optionIndex];
     
     $("#question")
-        .text(correctOption.value)
+        .text((game.variantIndex === null) ? correctOption.value : correctOption.value[game.variantIndex])
         .toggleClass("grundschrift", !(question.flags?.includes("no-grundschrift") ?? false))
     ;
 
     $answers.each((i, e) => {
         const option = question.options[i];
+        const isMultiOption = (game.variantIndex !== null && Array.isArray(option.option) && option.option.length > game.variantIndex);
+        const optionValue = isMultiOption ? option.option[game.variantIndex] : option.option;
         const css = {
             backgroundColor: "inherit",
         };
@@ -124,12 +130,12 @@ function renderQuestion(question) {
 
         switch (question.type) {
             case "color":
-                css.backgroundColor = option.option;
+                css.backgroundColor = optionValue;
                 break;
             case "emoji":
             case "symbol":
             case "alphanumeric":
-                text = option.option;
+                text = optionValue;
                 break;
             default:
                 console.error("Unknown question type", option.type);

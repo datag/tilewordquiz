@@ -268,37 +268,19 @@ export const questions = [
     {
         type: "emoji",
         options: [
-            { value: "Ärztin", option: "👩‍⚕️" },
-            { value: "Wissenschaftlerin", option: "👩‍🔬" },
-            { value: "Lehrerin", option: "👩‍🏫" },
-            { value: "Polizistin", option: "👮‍♀️" },
+            { value: ["Ärztin", "Arzt"], option: ["👩‍⚕️", "👨‍⚕️"] },
+            { value: ["Wissenschaftlerin", "Wissenschaftler"], option: ["👩‍🔬", "👨‍🔬"] },
+            { value: ["Lehrerin", "Lehrer"], option: ["👩‍🏫", "👨‍🏫"] },
+            { value: ["Polizistin", "Polizist"], option: ["👮‍♀️", "👮‍♂️"] },
         ],
     },
     {
         type: "emoji",
         options: [
-            { value: "Arzt", option: "👨‍⚕️" },
-            { value: "Wissenschaftler", option: "👨‍🔬" },
-            { value: "Lehrer", option: "👨‍🏫" },
-            { value: "Polizist", option: "👮‍♂️" },
-        ],
-    },
-    {
-        type: "emoji",
-        options: [
-            { value: "Künstlerin", option: "👩‍🎨" },
-            { value: "Feuerwehrfrau", option: "👩‍🚒" },
-            { value: "Astronautin", option: "👩‍🚀" },
-            { value: "Mechanikerin", option: "👩‍🔧" },
-        ],
-    },
-    {
-        type: "emoji",
-        options: [
-            { value: "Künstler", option: "👨‍🎨" },
-            { value: "Feuerwehrmann", option: "👨‍🚒" },
-            { value: "Astronaut", option: "👨‍🚀" },
-            { value: "Mechaniker", option: "👨‍🔧" },
+            { value: ["Künstlerin", "Künstler"], option: ["👩‍🎨", "👨‍🎨"] },
+            { value: ["Feuerwehrfrau", "Feuerwehrmann"], option: ["👩‍🚒", "👨‍🚒"] },
+            { value: ["Astronautin", "Astronaut"], option: ["👩‍🚀", "👨‍🚀"] },
+            { value: ["Mechanikerin", "Mechaniker"], option: ["👩‍🔧", "👨‍🔧"] },
         ],
     },
     {
@@ -656,19 +638,55 @@ export const questions = [
     {
         type: "alphanumeric",
         options: [
-            { value: "3 + 6 = ?", option: "9" },
-            { value: "5 + 3 = ?", option: "8" },
-            { value: "4 + 3 = ?", option: "7" },
-            { value: "2 + 3 = ?", option: "5" },
+            { value: ["1 + 0 = ?", "0 + 1 = ?"], option: "1" },
+            { value: "1 + 1 = ?", option: "2" },
+            { value: ["1 + 2 = ?", "2 + 1 = ?"], option: "3" },
+            { value: ["1 + 3 = ?", "2 + 2 = ?", "3 + 1 = ?"], option: "4" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
-            { value: "7 - 2 = ?", option: "5" },
-            { value: "5 - 3 = ?", option: "2" },
-            { value: "2 - 1 = ?", option: "1" },
-            { value: "6 - 3 = ?", option: "3" },
+            { value: ["1 + 4 = ?", "2 + 3 = ?", "3 + 2 = ?", "4 + 1 = ?"], option: "5" },
+            { value: ["1 + 5 = ?", "2 + 4 = ?", "3 + 3 = ?", "4 + 2 = ?", "5 + 1 = ?"], option: "6" },
+            { value: ["1 + 6 = ?", "2 + 5 = ?", "3 + 4 = ?", "4 + 3 = ?", "5 + 2 = ?", "6 + 1 = ?"], option: "7" },
+            { value: ["1 + 7 = ?", "2 + 6 = ?", "3 + 5 = ?", "4 + 4 = ?", "5 + 3 = ?", "6 + 2 = ?", "7 + 1 = ?"], option: "8" },
+        ],
+    },
+    {
+        type: "alphanumeric",
+        options: [
+            { value: ["1 + 8 = ?", "2 + 7 = ?", "3 + 6 = ?", "4 + 5 = ?", "5 + 4 = ?", "6 + 3 = ?", "7 + 2 = ?", "8 + 1 = ?"], option: "9" },
+            { value: ["1 + 9 = ?", "2 + 8 = ?", "3 + 7 = ?", "4 + 6 = ?", "5 + 5 = ?", "6 + 4 = ?", "7 + 3 = ?", "8 + 2 = ?", "9 + 1 = ?"], option: "10" },
+            { value: ["1 + 10 = ?", "2 + 9 = ?", "3 + 8 = ?", "4 + 7 = ?", "5 + 6 = ?", "6 + 5 = ?", "7 + 4 = ?", "8 + 3 = ?", "9 + 2 = ?", "10 + 1 = ?"], option: "11" },
+            { value: ["1 + 11 = ?", "2 + 10 = ?", "3 + 9 = ?", "4 + 8 = ?", "5 + 7 = ?", "6 + 6 = ?", "7 + 5 = ?", "8 + 4 = ?", "9 + 3 = ?", "10 + 2 = ?", "11 + 1 = ?"], option: "12" },
+        ],
+    },
+    {
+        type: "alphanumeric",
+        options: [
+            { value: ["12 - 12 = ?", "11 - 11 = ?", "10 - 10 = ?", "9 - 9 = ?", "8 - 8 = ?", "7 - 7 = ?", "6 - 6 = ?", "5 - 5 = ?", "4 - 4 = ?", "3 - 3 = ?", "2 - 2 = ?", "1 - 1 = ?", "0 - 0 = ?", "0 + 0 = ?"], option: "0" },
+            { value: ["12 - 11 = ?", "11 - 10 = ?", "10 - 9 = ?", "9 - 8 = ?", "8 - 7 = ?", "7 - 6 = ?", "6 - 5 = ?", "5 - 4 = ?", "4 - 3 = ?", "3 - 2 = ?", "2 - 1 = ?"], option: "1" },
+            { value: ["12 - 10 = ?", "11 - 9 = ?", "10 - 8 = ?", "9 - 7 = ?", "8 - 6 = ?", "7 - 5 = ?", "6 - 4 = ?", "5 - 3 = ?", "4 - 2 = ?", "3 - 1 = ?"], option: "2" },
+            { value: ["12 - 9 = ?", "11 - 8 = ?", "10 - 7 = ?", "9 - 6 = ?", "8 - 5 = ?", "7 - 4 = ?", "6 - 3 = ?", "5 - 2 = ?", "4 - 1 = ?"], option: "3" },
+        ],
+    },
+    {
+        type: "alphanumeric",
+        options: [
+            { value: ["12 - 8 = ?", "11 - 7 = ?", "10 - 6 = ?", "9 - 5 = ?", "8 - 4 = ?", "7 - 3 = ?", "6 - 2 = ?", "5 - 1 = ?"], option: "4" },
+            { value: ["12 - 7 = ?", "11 - 6 = ?", "10 - 5 = ?", "9 - 4 = ?", "8 - 3 = ?", "7 - 2 = ?", "6 - 1 = ?"], option: "5" },
+            { value: ["12 - 6 = ?", "11 - 5 = ?", "10 - 4 = ?", "9 - 3 = ?", "8 - 2 = ?", "7 - 1 = ?"], option: "6" },
+            { value: ["12 - 5 = ?", "11 - 4 = ?", "10 - 3 = ?", "9 - 2 = ?", "8 - 1 = ?"], option: "7" },
+        ],
+    },
+    {
+        type: "alphanumeric",
+        options: [
+            { value: ["12 - 4 = ?", "11 - 3 = ?", "10 - 2 = ?", "9 - 1 = ?"], option: "8" },
+            { value: ["12 - 3 = ?", "11 - 2 = ?", "10 - 1 = ?"], option: "9" },
+            { value: ["12 - 2 = ?", "11 - 1 = ?"], option: "10" },
+            { value: "12 - 1 = ?", option: "11" },
         ],
     },
     {
