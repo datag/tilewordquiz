@@ -284,6 +284,24 @@ export const questions = [
         ],
     },
     {
+        type: "emoji",
+        options: [
+            { value: ["Pilotin", "Pilot"], option: ["👩‍✈️", "👨‍✈️"] },
+            { value: ["Richterin", "Richter"], option: ["👩‍⚖️", "👨‍⚖️"] },
+            { value: ["Bäuerin", "Bauer"], option: ["👩‍🌾", "👨‍🌾"] },
+            { value: ["Köchin", "Koch"], option: ["👩‍🍳", "👨‍🍳"] },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: ["Detektivin", "Detektiv"], option: ["🕵️‍♀️", "🕵️‍♂️"] },
+            { value: ["Programmiererin", "Programmierer"], option: ["👩‍💻", "👨‍💻"] },
+            { value: ["Musikerin", "Musiker"], option: ["👩‍🎤", "👨‍🎤"] },
+            { value: ["Bauarbeiterin", "Bauarbeiter"], option: ["👷‍♀️", "👷‍♂️"] },
+        ],
+    },
+    {
         type: "symbol",
         options: [
             { value: "Herz", option: "❤" },
