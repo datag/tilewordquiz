@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Grundschrift';
-    src: url('/assets/fonts/grundschrift-beta.ttf');
+    src: url('../assets/fonts/grundschrift-beta.ttf');
 }
 
 .logo {

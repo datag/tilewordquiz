@@ -170,7 +170,7 @@ function shuffle(array) {
 }
 
 function loadAudio(sample) {
-    const file = `/assets/audio/${sample}.ogg`;
+    const file = `assets/audio/${sample}.ogg`;
     fetch(file)
         .then(response => response.arrayBuffer())
         .then(data => audioContext.decodeAudioData(data))
