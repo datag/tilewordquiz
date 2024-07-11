@@ -500,7 +500,7 @@ export const questions = [
             { value: "Eule", option: "🦉" },
             { value: "Eidechse", option: "🦎" },
             { value: "Ente", option: "🦆" },
-            { value: "Elch", option: "🦌" },
+            { value: "Elch", option: "🫎" },
         ],
     },
     {
@@ -741,6 +741,51 @@ export const questions = [
             { value: "Hase", option: "🐰" },
             { value: "Küken", option: "🐥" },
             { value: "Korb", option: "🧺" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Igel", option: "🦔" },
+            { value: "Krabbe", option: "🦀" },
+            { value: "Lama", option: "🦙" },
+            { value: "Eichhörnchen", option: "🐿️" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Papagei", option: "🦜" },
+            { value: "Pfau", option: "🦚" },
+            { value: "Pferd", option: "🐎" },
+            { value: "Affe", option: "🐒" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Bär", option: "🐻" },
+            { value: "Hirsch", option: "🦌" },
+            { value: "Esel", option: "🫏" },
+            { value: "Tintenfisch", option: "🦑" },
+        ],
+    },
+    {
+        type: "emoji",
+        options: [
+            { value: "Nashorn", option: "🦏" },
+            { value: "Leopard", option: "🐆" },
+            { value: "Wolf", option: "🐺" },
+            { value: "Ziege", option: "🐐" },
+        ],
+    },
+    {
+        type: "color",
+        options: [
+            { value: "Weiß", option: "#ffffff" },
+            { value: "Hellgrau", option: "#d3d3d3" },
+            { value: "Dunkelgrau", option: "#a9a9a9" },
+            { value: "Schwarz", option: "#000000" },
         ],
     },
 ];
