@@ -93,10 +93,10 @@ function checkAnswer(index) {
             .animate({ opacity: .25 }, 75)
             .animate({ opacity: 1 }, 175);
         if (game.highscore > 0 && game.score == game.highscore + 1) {
-            emoji = "😸";
+            emoji = randomElement(["😸", "🥳", "🤩"]);
             playAudio(audio.highscore);
         } else {
-            emoji = "😄";
+            emoji = randomElement(["😄", "👍", "🌞"]);
             playAudio(audio.correct);
         }
     }
@@ -173,6 +173,10 @@ function shuffle(array) {
 
 function randomIndex(array) {
     return Math.floor(Math.random() * array.length);;
+}
+
+function randomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
 }
 
 function loadAudio(sample) {
