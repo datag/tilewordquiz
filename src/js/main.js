@@ -103,13 +103,15 @@ function checkAnswer(index) {
 
     $status.text(emoji);
 
-    $answers.addClass("disable-clicks");
+    $answers.add("#new-game")
+        .addClass("disable-clicks");
 
     renderStatus();
 
     window.setTimeout(() => {
         $status.text("");
-        $answers.removeClass("disable-clicks correct wrong");
+        $answers.add("#new-game")
+            .removeClass("disable-clicks correct wrong");
         
         nextQuestion();
     }, timeout);
