@@ -57,7 +57,7 @@ function nextQuestion() {
     const lastQuestionIndex = game.questionIndex;
     if (questions.length > 1) {
         while (lastQuestionIndex == game.questionIndex) {
-            game.questionIndex = Math.floor(Math.random() * questions.length);
+            game.questionIndex = randomIndex(questions);
         }
     } else {
         game.questionIndex = 0;
@@ -65,10 +65,10 @@ function nextQuestion() {
 
     const question = questions[game.questionIndex];
     shuffle(question.options);
-    game.optionIndex = Math.floor(Math.random() * question.options.length);
+    game.optionIndex = randomIndex(question.options);
 
     const option = question.options[game.optionIndex];
-    game.variantIndex = Array.isArray(option.value) ? Math.floor(Math.random() * option.value.length) : null;
+    game.variantIndex = Array.isArray(option.value) ? randomIndex(option.value) : null;
 
     renderQuestion(question);
 }
@@ -169,6 +169,10 @@ function shuffle(array) {
 
         [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
+}
+
+function randomIndex(array) {
+    return Math.floor(Math.random() * array.length);;
 }
 
 function loadAudio(sample) {
