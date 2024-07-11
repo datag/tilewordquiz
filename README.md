@@ -28,11 +28,11 @@ apksigner sign --min-sdk-version 33 --ks /path/to/store.keystore --ks-key-alias 
 
 ## Credits
 
-### Used font "Grundschrift"
+### Used font "Grundschrift (beta)"
 
 > Copyright 2011 Grundschulverband e.V. und Wissenschaftliche Einrichtung der Laborschule Bielefeld
 
-See https://grundschulverband.de/die-grundschrift-fuer-den-computer/
+See https://grundschulverband.de/grundschrift/
 
 ### Used sounds
 
