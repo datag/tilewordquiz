@@ -297,7 +297,7 @@ export const questions = [
         options: [
             { value: ["Detektivin", "Detektiv"], option: ["🕵️‍♀️", "🕵️‍♂️"] },
             { value: ["Programmiererin", "Programmierer"], option: ["👩‍💻", "👨‍💻"] },
-            { value: ["Musikerin", "Musiker"], option: ["👩‍🎤", "👨‍🎤"] },
+            { value: ["Studentin", "Student"], option: ["👩‍🎓", "👨‍🎓"] },
             { value: ["Bauarbeiterin", "Bauarbeiter"], option: ["👷‍♀️", "👷‍♂️"] },
         ],
     },
@@ -539,16 +539,16 @@ export const questions = [
             { value: "Gamepad", option: "🎮" },
         ],
     },
-    {
-        type: "symbol",
-        options: [
-            { value: "1", option: "Ⅰ" },
-            { value: "2", option: "Ⅱ" },
-            { value: "3", option: "Ⅲ" },
-            { value: "4", option: "Ⅳ" },
-        ],
-        note: "Römische Zahlen (1 bis 4)",
-    },
+    // {
+    //     type: "symbol",
+    //     options: [
+    //         { value: "1", option: "Ⅰ" },
+    //         { value: "2", option: "Ⅱ" },
+    //         { value: "3", option: "Ⅲ" },
+    //         { value: "4", option: "Ⅳ" },
+    //     ],
+    //     note: "Römische Zahlen (1 bis 4)",
+    // },
     // {
     //     type: "symbol",
     //     options: [
@@ -631,80 +631,80 @@ export const questions = [
             { value: "Konfetti", option: "🎉" },
         ],
     },
-    {
-        type: "color",
-        flags: ["no-grundschrift"],
-        options: [
-            { value: "🔦: 🟥 + 🟩", option: "#ffff00" },
-            { value: "🔦: 🟥 + 🟦", option: "#ff00ff" },
-            { value: "🔦: 🟩 + 🟦", option: "#00ffff" },
-            { value: "🔦: 🟥 + 🟩 + 🟦", option: "#ffffff" },
-        ],
-        note: "Additive Farbmischung (Lichtfarben)",
-    },
-    {
-        type: "color",
-        flags: ["no-grundschrift"],
-        options: [
-            { value: "🎨: 💛 + 💜", option: "#fc0011" },      // yellow (#feff00) + magenta (#e9008a) = red
-            { value: "🎨: 💛 + 🩵", option: "#008436" },      // yellow (#feff00) + cyan (#009ec7) = green
-            { value: "🎨: 🩵 + 💜", option: "#00007c" },      // cyan (#009ec7) + magenta (#e9008a) = blue
-            { value: "🎨: 🩵 + 💜 + 💛", option: "#0a0001" }, // cyan (#009ec7) + magenta (#e9008a) + yellow (#feff00) = theoretical black
-        ],
-        note: "Substraktive Farbmischung (Körperfarben)",
-    },
+    // {
+    //     type: "color",
+    //     flags: ["no-grundschrift"],
+    //     options: [
+    //         { value: "🔦: 🟥 + 🟩", option: "#ffff00" },
+    //         { value: "🔦: 🟥 + 🟦", option: "#ff00ff" },
+    //         { value: "🔦: 🟩 + 🟦", option: "#00ffff" },
+    //         { value: "🔦: 🟥 + 🟩 + 🟦", option: "#ffffff" },
+    //     ],
+    //     note: "Additive Farbmischung (Lichtfarben)",
+    // },
+    // {
+    //     type: "color",
+    //     flags: ["no-grundschrift"],
+    //     options: [
+    //         { value: "🎨: 💛 + 💜", option: "#fc0011" },      // yellow (#feff00) + magenta (#e9008a) = red
+    //         { value: "🎨: 💛 + 🩵", option: "#008436" },      // yellow (#feff00) + cyan (#009ec7) = green
+    //         { value: "🎨: 🩵 + 💜", option: "#00007c" },      // cyan (#009ec7) + magenta (#e9008a) = blue
+    //         { value: "🎨: 🩵 + 💜 + 💛", option: "#0a0001" }, // cyan (#009ec7) + magenta (#e9008a) + yellow (#feff00) = theoretical black
+    //     ],
+    //     note: "Substraktive Farbmischung (Körperfarben)",
+    // },
     {
         type: "alphanumeric",
         options: [
+            { value: "0 + 0 = ?", option: "0" },
             { value: ["1 + 0 = ?", "0 + 1 = ?"], option: "1" },
             { value: "1 + 1 = ?", option: "2" },
             { value: ["1 + 2 = ?", "2 + 1 = ?"], option: "3" },
-            { value: ["1 + 3 = ?", "2 + 2 = ?", "3 + 1 = ?"], option: "4" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
+            { value: ["1 + 3 = ?", "2 + 2 = ?", "3 + 1 = ?"], option: "4" },
             { value: ["1 + 4 = ?", "2 + 3 = ?", "3 + 2 = ?", "4 + 1 = ?"], option: "5" },
             { value: ["1 + 5 = ?", "2 + 4 = ?", "3 + 3 = ?", "4 + 2 = ?", "5 + 1 = ?"], option: "6" },
             { value: ["1 + 6 = ?", "2 + 5 = ?", "3 + 4 = ?", "4 + 3 = ?", "5 + 2 = ?", "6 + 1 = ?"], option: "7" },
-            { value: ["1 + 7 = ?", "2 + 6 = ?", "3 + 5 = ?", "4 + 4 = ?", "5 + 3 = ?", "6 + 2 = ?", "7 + 1 = ?"], option: "8" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
+            { value: ["1 + 6 = ?", "2 + 5 = ?", "3 + 4 = ?", "4 + 3 = ?", "5 + 2 = ?", "6 + 1 = ?"], option: "7" },
+            { value: ["1 + 7 = ?", "2 + 6 = ?", "3 + 5 = ?", "4 + 4 = ?", "5 + 3 = ?", "6 + 2 = ?", "7 + 1 = ?"], option: "8" },
             { value: ["1 + 8 = ?", "2 + 7 = ?", "3 + 6 = ?", "4 + 5 = ?", "5 + 4 = ?", "6 + 3 = ?", "7 + 2 = ?", "8 + 1 = ?"], option: "9" },
             { value: ["1 + 9 = ?", "2 + 8 = ?", "3 + 7 = ?", "4 + 6 = ?", "5 + 5 = ?", "6 + 4 = ?", "7 + 3 = ?", "8 + 2 = ?", "9 + 1 = ?"], option: "10" },
-            { value: ["1 + 10 = ?", "2 + 9 = ?", "3 + 8 = ?", "4 + 7 = ?", "5 + 6 = ?", "6 + 5 = ?", "7 + 4 = ?", "8 + 3 = ?", "9 + 2 = ?", "10 + 1 = ?"], option: "11" },
-            { value: ["1 + 11 = ?", "2 + 10 = ?", "3 + 9 = ?", "4 + 8 = ?", "5 + 7 = ?", "6 + 6 = ?", "7 + 5 = ?", "8 + 4 = ?", "9 + 3 = ?", "10 + 2 = ?", "11 + 1 = ?"], option: "12" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
-            { value: ["12 - 12 = ?", "11 - 11 = ?", "10 - 10 = ?", "9 - 9 = ?", "8 - 8 = ?", "7 - 7 = ?", "6 - 6 = ?", "5 - 5 = ?", "4 - 4 = ?", "3 - 3 = ?", "2 - 2 = ?", "1 - 1 = ?", "0 - 0 = ?", "0 + 0 = ?"], option: "0" },
-            { value: ["12 - 11 = ?", "11 - 10 = ?", "10 - 9 = ?", "9 - 8 = ?", "8 - 7 = ?", "7 - 6 = ?", "6 - 5 = ?", "5 - 4 = ?", "4 - 3 = ?", "3 - 2 = ?", "2 - 1 = ?"], option: "1" },
-            { value: ["12 - 10 = ?", "11 - 9 = ?", "10 - 8 = ?", "9 - 7 = ?", "8 - 6 = ?", "7 - 5 = ?", "6 - 4 = ?", "5 - 3 = ?", "4 - 2 = ?", "3 - 1 = ?"], option: "2" },
-            { value: ["12 - 9 = ?", "11 - 8 = ?", "10 - 7 = ?", "9 - 6 = ?", "8 - 5 = ?", "7 - 4 = ?", "6 - 3 = ?", "5 - 2 = ?", "4 - 1 = ?"], option: "3" },
+            { value: ["10 - 10 = ?", "9 - 9 = ?", "8 - 8 = ?", "7 - 7 = ?", "6 - 6 = ?", "5 - 5 = ?", "4 - 4 = ?", "3 - 3 = ?", "2 - 2 = ?", "1 - 1 = ?", "0 - 0 = ?"], option: "0" },
+            { value: ["10 - 9 = ?", "9 - 8 = ?", "8 - 7 = ?", "7 - 6 = ?", "6 - 5 = ?", "5 - 4 = ?", "4 - 3 = ?", "3 - 2 = ?", "2 - 1 = ?"], option: "1" },
+            { value: ["10 - 8 = ?", "9 - 7 = ?", "8 - 6 = ?", "7 - 5 = ?", "6 - 4 = ?", "5 - 3 = ?", "4 - 2 = ?", "3 - 1 = ?"], option: "2" },
+            { value: ["10 - 7 = ?", "9 - 6 = ?", "8 - 5 = ?", "7 - 4 = ?", "6 - 3 = ?", "5 - 2 = ?", "4 - 1 = ?"], option: "3" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
-            { value: ["12 - 8 = ?", "11 - 7 = ?", "10 - 6 = ?", "9 - 5 = ?", "8 - 4 = ?", "7 - 3 = ?", "6 - 2 = ?", "5 - 1 = ?"], option: "4" },
-            { value: ["12 - 7 = ?", "11 - 6 = ?", "10 - 5 = ?", "9 - 4 = ?", "8 - 3 = ?", "7 - 2 = ?", "6 - 1 = ?"], option: "5" },
-            { value: ["12 - 6 = ?", "11 - 5 = ?", "10 - 4 = ?", "9 - 3 = ?", "8 - 2 = ?", "7 - 1 = ?"], option: "6" },
-            { value: ["12 - 5 = ?", "11 - 4 = ?", "10 - 3 = ?", "9 - 2 = ?", "8 - 1 = ?"], option: "7" },
+            { value: ["10 - 6 = ?", "9 - 5 = ?", "8 - 4 = ?", "7 - 3 = ?", "6 - 2 = ?", "5 - 1 = ?"], option: "4" },
+            { value: ["10 - 5 = ?", "9 - 4 = ?", "8 - 3 = ?", "7 - 2 = ?", "6 - 1 = ?"], option: "5" },
+            { value: ["10 - 4 = ?", "9 - 3 = ?", "8 - 2 = ?", "7 - 1 = ?"], option: "6" },
+            { value: ["10 - 3 = ?", "9 - 2 = ?", "8 - 1 = ?"], option: "7" },
         ],
     },
     {
         type: "alphanumeric",
         options: [
-            { value: ["12 - 4 = ?", "11 - 3 = ?", "10 - 2 = ?", "9 - 1 = ?"], option: "8" },
-            { value: ["12 - 3 = ?", "11 - 2 = ?", "10 - 1 = ?"], option: "9" },
-            { value: ["12 - 2 = ?", "11 - 1 = ?"], option: "10" },
-            { value: "12 - 1 = ?", option: "11" },
+            { value: ["10 - 4 = ?", "9 - 3 = ?", "8 - 2 = ?", "7 - 1 = ?"], option: "6" },
+            { value: ["10 - 3 = ?", "9 - 2 = ?", "8 - 1 = ?"], option: "7" },
+            { value: ["10 - 2 = ?", "9 - 1 = ?"], option: "8" },
+            { value: ["10 - 1 = ?"], option: "9" },
         ],
     },
     {
