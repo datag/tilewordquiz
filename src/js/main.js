@@ -89,9 +89,14 @@ function checkAnswer(index) {
         playAudio(audio.wrong);
     } else {
         game.score++;
-        $("#score")
-            .animate({ opacity: .25 }, 75)
-            .animate({ opacity: 1 }, 175);
+        document.getElementById('score').animate([
+            { opacity: 1 },
+            { opacity: 0.25 },
+            { opacity: 1 },
+        ], {
+            duration: 250, // 75ms for the first step and 175ms for the second step
+            easing: 'linear',
+        });
         if (game.highscore > 0 && game.score == game.highscore + 1) {
             emoji = randomElement(["😸", "🥳", "🤩"]);
             playAudio(audio.highscore);
