@@ -17,16 +17,29 @@ There are currently 3 question types:
 * https://v2.tauri.app/start/prerequisites/#android
 
 ```shell
-cargo tauri android init
-cargo tauri icon src/assets/logo.svg
 cargo tauri dev
 cargo tauri android dev
 cargo tauri android build --target=aarch64
-apksigner sign --min-sdk-version 33 --ks /path/to/store.keystore --ks-key-alias alias --in "/path/to/release.aab" --out "/path/to/release-signed.aab"
+apksigner sign --min-sdk-version 34 --ks /path/to/store.keystore --ks-key-alias alias --in "/path/to/release.aab" --out "/path/to/release-signed.aab"
+```
+
+Re-init Android:
+```shell
+cargo tauri android init
+cargo tauri icon src/assets/images/logo.svg
 ```
 
 
 ## Credits
+
+### Base application
+
+[Tauri 2](https://beta.tauri.app/)
+
+### Frontend libraries
+
+* [jQuery 3 slim](https://jquery.com/)
+* [Bootstrap 5](https://getbootstrap.com/)
 
 ### Used font "Grundschrift (beta)"
 
