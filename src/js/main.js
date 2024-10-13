@@ -83,7 +83,7 @@ function checkAnswer(index) {
 
     if (!correct) {
         emoji = "😔";
-        game.highscore = game.score;
+        game.highscore = Math.max(game.score, game.highscore);
         game.score = 0;
         $answers.eq(index).addClass("wrong");
         playAudio(audio.wrong);
