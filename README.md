@@ -10,6 +10,7 @@ There are currently 3 question types:
 2) Alphanumeric: Tiles with digits, letters or characters to be display in the Grundschrift font
 3) Color: Tiles with a color as the background
 
+There's **optional** support for generating the questions by AI, which requires an OpenAI API key.
 
 ## Building
 

@@ -1,4 +1,8 @@
 import { questions } from "./questions.js";
+import { AiQuestion } from "./ai.js";
+import { Settings } from "./settings.js";
+
+let config;
 
 const game = {
     score: 0,
@@ -6,6 +10,7 @@ const game = {
     questionIndex: null,
     optionIndex: null,
     variantIndex: null,
+    fetchedQuestion: null,
 };
 
 let $answers;
@@ -18,10 +23,49 @@ const audio = {
 };
 Object.keys(audio).forEach(sample => loadAudio(sample));
 
-$(function() {
+$(async function() {
     $answers = $("#answers .answer");
 
     $("#new-game").click((e) => newGame());
+
+    $("#settings").click((e) => {
+        $("#settingsPanel").toggle();
+    });
+
+    $("#setting-temperature").on("input", (e) => {
+        $("#setting-temperature-value-label").text($(e.target).val());
+    });
+
+    $("#setting-topic-generate").click(async (e) => {
+        if (!config.openAiApiKey) {
+            // FIXME: ...
+            alert('Set an API key first and apply settings, then try again.');
+            return;
+        }
+
+        let topics = await AiQuestion.generateTopics(10);
+        if (!topics.error) {
+            console.log(topics);
+            $("#setting-topic").val(topics.data.topics.join(", "));
+        } else {
+            alert(topics.error);
+        }
+    });
+
+    $("#apply-settings").click((e) => {
+        config.useAi = $("#setting-useAi").prop("checked");
+        config.openAiApiKey = $("#setting-openAiApiKey").val() || null;
+        config.language = $("#setting-language").val();
+        config.topic = $("#setting-topic").val() || null;
+        config.temperature = +$("#setting-temperature").val();
+
+        Settings.saveSettings(config);
+        $("#settingsPanel").hide();
+
+        initSettings();
+
+        newGame();
+    });
 
     const isTouchDevice = "ontouchstart" in document.documentElement;
     $answers.on(isTouchDevice ? "touchstart" : "mousedown", (e) => {
@@ -30,15 +74,37 @@ $(function() {
         checkAnswer($(e.target).data("index"));
     });
 
+    initSettings();
+
     newGame();
 });
+
+function initSettings() {
+    config = Settings.loadSettings();
+    console.table(config);
+
+    AiQuestion.setApiKey(config.openAiApiKey);
+
+    $("#setting-useAi").prop("checked", config.useAi);
+    $("#setting-openAiApiKey").val(config.openAiApiKey || null);
+    $("#setting-language").val(config.language);
+    $("#setting-topic").val(config.topic || null);
+    $("#setting-topic-generate").prop("disabled", !config.openAiApiKey);
+    $("#setting-temperature")
+        .val(config.temperature)
+        .trigger("input");
+}
 
 function newGame() {
     game.score = 0;
     game.highscore = 0;
 
+    $answers.add("#new-game")
+        .addClass("disable-clicks");
+
     renderStatus();
 
+    game.fetchedQuestion = fetchNextQuestion();
     nextQuestion();
 }
 
@@ -53,17 +119,46 @@ function renderStatus() {
         .toggle(game.highscore > 0 && game.highscore >= game.score);
 }
 
-function nextQuestion() {
-    const lastQuestionIndex = game.questionIndex;
-    if (questions.length > 1) {
-        while (lastQuestionIndex == game.questionIndex) {
-            game.questionIndex = randomIndex(questions);
+async function fetchNextQuestion() {
+    if (config.useAi) {
+        const topics = config.topic ? config.topic.split(",") : null;
+        const topic = config.topic ? randomElement(topics).trim() : null;
+        const result = await AiQuestion.generateQuestion(config.language, topic, config.temperature);
+        if (result.error) {
+            console.error(result.error);
+            return {
+                type: "emoji",
+                options: [
+                    {value: "ERROR", option: "⚠️"},
+                    {value: "ERROR", option: "⚠️"},
+                    {value: "ERROR", option: "⚠️"},
+                    {value: "ERROR", option: "⚠️"},
+                ],
+                note: result.error,
+            };
         }
+        return result.data;
     } else {
-        game.questionIndex = 0;
-    }
+        const lastQuestionIndex = game.questionIndex;
+        if (questions.length > 1) {
+            while (lastQuestionIndex == game.questionIndex) {
+                game.questionIndex = randomIndex(questions);
+            }
+        } else {
+            game.questionIndex = 0;
 
-    const question = questions[game.questionIndex];
+        }
+        return questions[game.questionIndex];
+    }
+}
+
+async function nextQuestion() {
+    const question = await game.fetchedQuestion;
+
+    $("#status").text("");
+    $answers.add("#new-game")
+        .removeClass("disable-clicks correct wrong");
+
     shuffle(question.options);
     game.optionIndex = randomIndex(question.options);
 
@@ -113,18 +208,16 @@ function checkAnswer(index) {
 
     renderStatus();
 
+    game.fetchedQuestion = fetchNextQuestion();
+
     window.setTimeout(() => {
-        $status.text("");
-        $answers.add("#new-game")
-            .removeClass("disable-clicks correct wrong");
-        
         nextQuestion();
     }, timeout);
 }
 
 function renderQuestion(question) {
     const correctOption = question.options[game.optionIndex];
-    
+
     $("#question")
         .text((game.variantIndex === null) ? correctOption.value : correctOption.value[game.variantIndex])
         .toggleClass("grundschrift", !(question.flags?.includes("no-grundschrift") ?? false))
