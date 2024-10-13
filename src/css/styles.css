@@ -78,6 +78,14 @@
     cursor: pointer;
 }
 
+@media (min-width: 768px) {
+    #answers .answer {
+        border-radius: 16px;
+        width: 114px;
+        height: 124px;
+    }
+}
+
 #answers .answer.type-color {
     background-color: inherit;
 }
@@ -87,10 +95,24 @@
     font-size: 2em;
 }
 
+@media (min-width: 768px) {
+    #answers .answer.type-emoji,
+    #answers .answer.type-symbol {
+        font-size: 4em;
+    }
+}
+
 #answers .answer.type-alphanumeric {
     font-size: 2.2em;
     font-family: Grundschrift;
     padding: 8px 0 0px 0;  /* offset for Grundschrift */
+}
+
+@media (min-width: 768px) {
+    #answers .answer.type-alphanumeric {
+        font-size: 4.2em;
+        padding: 21px 0 0px 0;  /* offset for Grundschrift */
+    }
 }
 
 #answers .answer.correct {
