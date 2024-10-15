@@ -10,42 +10,33 @@ export const AiQuestion = (() => {
     }
 
     async function generateQuestion(language, topic, temperature) {
-        const inputExample = {
-            language: "de",
-            topic: "Verkehrsmittel",
-        };
         const outputExample = {
             type: "emoji",
             options: [
-                { value: "Auto", option: "🚗" },
-                { value: "Fahrrad", option: "🚲" },
-                { value: "Flugzeug", option: "✈️" },
-                { value: "Schiff", option: "🚢" },
+                { value: "Car", option: "🚗" },
+                { value: "Bicycle", option: "🚲" },
+                { value: "Airplane", option: "✈️" },
+                { value: "Ship", option: "🚢" },
             ],
-            note: "Verkehrsmittel",
+            note: "Means of transport",
         };
 
-/*
-TODO: Other question types.
-These are valid question types (\`type\`) and their expected value for \`option\`:
-* \`emoji\`: A unicode character, mostly an emoji.
-* \`color\`: A valid HTML color (name or hex).
-* \`symbol\`: A single digit or symbol (non-emoji).
-*/
-
         const systemMessage = `
-You generate a question with 4 options for use in a quiz app. I'll give you JSON with a language and an optional topic.
+You generate a question with 4 options for use in a quiz app. I'll provide you with the desired language and an optional topic (may be in any language).
 Rules:
-* Options are always in the requested \`language\`.
-* You stick to the provided \`topic\`. Only if the topic is \`null\` you choose a random topic yourself.
+* You always answer with options in the requested language.
+* Even if I provide the topic or previous answers in another language, you always stick to the language I asked for.
+* You stick to the provided topic. Only if the topic is empty, you choose a random topic yourself.
 * The 4 options should be consistent with the topic.
-* Only one of the options is the correct answer and the emoji options must be unique and unambiguous. Never have more than one emoji the same.
-* The emoji must be semantically recognizable by the human player.
-* The question type is \`emoji\` and your option is a single unicode character, mostly an emoji.
+* Only one of the options must be the correct answer.
+* The emoji options must be unambiguous/distinguishable/recognizable to the player.
+* Do not use the same emoji in a question multiple times.
+* Your options emoji consist of a single unicode character, mostly an emoji.
 
 Example input:
-\`\`\`json
-${JSON.stringify(inputExample, null, 2)}
+\`\`\`
+Language: en (English)
+Topic: Verkehrsmittel
 \`\`\`
 
 Example output:
@@ -58,8 +49,9 @@ ${getPreviousQuestions(10).map((question) => `* ${question}`).join("\n")}
     `.trim();
 
         const userMessage = `
-\`\`\`json
-${JSON.stringify({language, topic}, null, 2)}
+\`\`\`
+Language: ${language}
+Topic: ${topic}
 \`\`\`
     `.trim();
 
@@ -154,7 +146,7 @@ ${JSON.stringify({language, topic}, null, 2)}
     async function generateTopics(count) {
         const systemMessage = `
 You generate random ${count} topics for a quiz app which uses unicode emojis for its questions.
-The generated topics should be suitable for emoji classes and be given in German language.
+The generated topics should be suitable for emoji classes, don't contain a comma and be given in German language.
 
 Example output:
 \`\`\`json

@@ -124,6 +124,7 @@ async function fetchNextQuestion() {
         const topics = config.topic ? config.topic.split(",") : null;
         const topic = config.topic ? randomElement(topics).trim() : null;
         const result = await AiQuestion.generateQuestion(config.language, topic, config.temperature);
+        // TODO: Check question for repeated emojis and retry, if any
         if (result.error) {
             console.error(result.error);
             return {
