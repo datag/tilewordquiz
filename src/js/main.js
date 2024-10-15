@@ -102,6 +102,17 @@ function newGame() {
     $answers.add("#new-game")
         .addClass("disable-clicks");
 
+    // reset rendered question
+    $("#question")
+        .text("")
+        .removeClass();
+    $answers
+        .text("")
+        .removeClass()
+        .addClass("answer")
+        .removeAttr('style');
+    $("#note").hide();
+
     renderStatus();
 
     game.fetchedQuestion = fetchNextQuestion();
