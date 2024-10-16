@@ -56,7 +56,7 @@ Topic: ${topic}
     `.trim();
 
         const data = {
-            "model": "gpt-4o",
+            "model": "gpt-4o-mini",
             "messages": [
               {
                 "role": "system",
@@ -166,7 +166,7 @@ Example output:
 `.trim();
 
         const data = {
-            "model": "gpt-4o",
+            "model": "gpt-4o-mini",
             "messages": [
               {
                 "role": "system",
