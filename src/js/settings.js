@@ -5,7 +5,7 @@ export const Settings = (() => {
     const defaultSettings = {
         useAi: false,
         openAiApiKey: null,
-        language: 'de',
+        language: 'de (German)',
         topic: null,
         temperature: 1.0,
     };
