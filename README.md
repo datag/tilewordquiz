@@ -10,6 +10,12 @@ There are currently 3 question types:
 2) Alphanumeric: Tiles with digits, letters or characters to be display in the Grundschrift font
 3) Color: Tiles with a color as the background
 
+## Demo
+
+<a href="https://datag.github.io/tilewordquiz/">
+<img src="src/assets/images/logo.svg" width="48" style=" vertical-align: middle">
+Try it out
+</a>
 
 ## Building
 
