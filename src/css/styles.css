@@ -134,3 +134,7 @@
     pointer-events: none;
     cursor: default;
 }
+
+#settingsPanel {
+    display: none;
+}

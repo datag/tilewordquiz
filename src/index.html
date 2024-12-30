@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TileWordQuiz</title>
     <script type="module" src="libs/js/jquery.slim.min.js" defer></script>
+    <script type="module" src="js/settings.js" defer></script>
     <script type="module" src="js/questions.js" defer></script>
+    <script type="module" src="js/ai.js" defer></script>
     <script type="module" src="js/main.js" defer></script>
   </head>
   <body>
@@ -19,8 +21,95 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-6 text-center">
-          <button id="new-game">✨ Neues Spiel</button>
+        <div class="col-8 text-center">
+          <button id="new-game" type="button" class="btn btn-light">✨ Neues Spiel</button>
+          <button id="settings" type="button" class="btn btn-light">⚙️</button>
+        </div>
+      </div>
+      <div class="row justify-content-center" id="settingsPanel">
+        <div class="col-12 my-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Einstellungen</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="setting-useAi">
+                        <label class="form-check-label" for="setting-useAi">
+                          AI-generierte Fragen
+                        </label>
+                    </div>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <h6 class="card-title text-muted">AI-Einstellungen</h6>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control font-monospace" id="setting-openAiApiKey" placeholder="sk-proj-***">
+                                <label for="setting-openAiApiKey">OpenAI API-Key</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-control" id="setting-language">
+                                    <optgroup label="Westeuropäisch">
+                                        <option value="de (German)">Deutsch</option>
+                                        <option value="en (English)">Englisch</option>
+                                        <option value="es (Spanish)">Spanisch</option>
+                                        <option value="fr (French)">Französisch</option>
+                                        <option value="it (Italian)">Italienisch</option>
+                                        <option value="nl (Dutch)">Niederländisch</option>
+                                        <option value="pt (Portuguese)">Portugiesisch</option>
+                                        <option value="da (Danish)">Dänisch</option>
+                                        <option value="sv (Swedish)">Schwedisch</option>
+                                        <option value="no (Norwegian)">Norwegisch</option>
+                                        <option value="fi (Finnish)">Finnisch</option>
+                                        <option value="is (Icelandic)">Isländisch</option>
+                                        <option value="gsw (Swiss German)">Schweizerdeutsch</option>
+                                    </optgroup>
+                                    <optgroup label="Sonstige">
+                                        <option value="ru (Russian)">Russisch</option>
+                                        <option value="tr (Turkish)">Türkisch</option>
+                                        <option value="pl (Polish)">Polnisch</option>
+                                        <option value="bg (Bulgarian)">Bulgarisch</option>
+                                        <option value="cs (Czech)">Tschechisch</option>
+                                        <option value="hr (Croatian)">Kroatisch</option>
+                                        <option value="hu (Hungarian)">Ungarisch</option>
+                                        <option value="lt (Lithuanian)">Litauisch</option>
+                                        <option value="lv (Latvian)">Lettisch</option>
+                                        <option value="ro (Romanian)">Rumänisch</option>
+                                        <option value="sk (Slovak)">Slowakisch</option>
+                                        <option value="sl (Slovenian)">Slowenisch</option>
+                                        <option value="sr (Serbian)">Serbisch</option>
+                                        <option value="uk (Ukrainian)">Ukrainisch</option>
+                                        <option value="et (Estonian)">Estnisch</option>
+                                        <option value="mk (Macedonian)">Mazedonisch</option>
+                                        <option value="el (Greek)">Griechisch</option>
+                                    </optgroup>
+                                    <optgroup label="Plansprachen">
+                                        <option value="eo (Esperanto)">Esperanto</option>
+                                        <option value="Basic/Simple English">Basic/Simple English</option>
+                                    </optgroup>
+                                </select>
+                                <label for="setting-language">Sprache</label>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-11">
+                                    <div class="form-floating">
+                                    <input type="text" class="form-control" id="setting-topic" placeholder="Themen">
+                                    <label for="setting-topic">Themen (komma-separiert; leer ist zufällig)</label>
+                                </div>
+                                </div>
+                                <div class="col-sm">
+                                    <button id="setting-topic-generate" type="button" class="btn btn-dark btn-lg" title="Mit AI generieren">✨</button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="setting-temperature" class="form-label">
+                                    Kreativität (<span id="setting-temperature-value-label"></span>)<br>
+                                    <span class="text-muted"><small>Hinweis: Standardwert → 1,0; Kleinere Werte → eher deterministisch, größere Werte → mehr zufällig. Werte ab 1,5 führen häufiger zu Fehlern!</small></span>
+                                </label>
+                                <input type="range" class="form-range" id="setting-temperature" min="0" max="2" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="apply-settings">Übernehmen</button>
+                </div>
+            </div>
         </div>
       </div>
       <div class="row justify-content-center">
