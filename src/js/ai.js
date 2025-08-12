@@ -3,10 +3,16 @@ export const AiQuestion = (() => {
 
     let apiKey = null;
 
+    let model = 'gpt-4o-mini';
+
     let previousQuestions = [];
 
     function setApiKey(key) {
         apiKey = key;
+    }
+
+    function setModel(newModel) {
+        model = newModel;
     }
 
     async function generateQuestion(language, topic, temperature) {
@@ -56,7 +62,7 @@ Topic: ${topic}
     `.trim();
 
         const data = {
-            "model": "gpt-4o-mini",
+            "model": model,
             "messages": [
               {
                 "role": "system",
@@ -166,7 +172,7 @@ Example output:
 `.trim();
 
         const data = {
-            "model": "gpt-4o-mini",
+            "model": model,
             "messages": [
               {
                 "role": "system",
@@ -240,6 +246,7 @@ Example output:
 
     return {
         setApiKey,
+        setModel,
         generateQuestion,
         generateTopics,
     };

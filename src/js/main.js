@@ -55,6 +55,7 @@ $(async function() {
     $("#apply-settings").click((e) => {
         config.useAi = $("#setting-useAi").prop("checked");
         config.openAiApiKey = $("#setting-openAiApiKey").val() || null;
+        config.openAiModel = $("#setting-openAiModel").val() || null;
         config.language = $("#setting-language").val();
         config.topic = $("#setting-topic").val() || null;
         config.temperature = +$("#setting-temperature").val();
@@ -84,9 +85,11 @@ function initSettings() {
     console.table(config);
 
     AiQuestion.setApiKey(config.openAiApiKey);
+    AiQuestion.setModel(config.openAiModel);
 
     $("#setting-useAi").prop("checked", config.useAi);
     $("#setting-openAiApiKey").val(config.openAiApiKey || null);
+    $("#setting-openAiModel").val(config.openAiModel || null);
     $("#setting-language").val(config.language);
     $("#setting-topic").val(config.topic || null);
     $("#setting-topic-generate").prop("disabled", !config.openAiApiKey);
