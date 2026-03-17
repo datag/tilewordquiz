@@ -5,7 +5,7 @@ export const Settings = (() => {
     const defaultSettings = {
         useAi: false,
         openAiApiKey: null,
-        openAiModel: 'gpt-4o-mini',
+        openAiModel: 'gpt-4.1-mini',
         language: 'de (German)',
         topic: null,
         temperature: 1.0,

@@ -3,7 +3,7 @@ export const AiQuestion = (() => {
 
     let apiKey = null;
 
-    let model = 'gpt-4o-mini';
+    let model = 'gpt-4.1-mini';
 
     let previousQuestions = [];
 
