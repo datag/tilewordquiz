@@ -37,6 +37,7 @@ Rules:
 * Only one of the options must be the correct answer.
 * The emoji options must be unambiguous/distinguishable/recognizable to the player.
 * Do not use the same emoji in a question multiple times.
+* A value must not contain its corresponding option.
 * Your options emoji consist of a single unicode character, mostly an emoji.
 
 Example input:
